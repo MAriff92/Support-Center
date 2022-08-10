@@ -73,6 +73,7 @@ Partial Class Form1
         Me.lbl_noxip = New System.Windows.Forms.Label()
         Me.lbl_so2ip = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -559,11 +560,21 @@ Partial Class Form1
         'BackgroundWorker1
         '
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(6, 290)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(90, 23)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "Check DB"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1064, 445)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
@@ -630,4 +641,5 @@ Partial Class Form1
     Friend WithEvents lbl_noxip As Label
     Friend WithEvents lbl_so2ip As Label
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Button1 As Button
 End Class

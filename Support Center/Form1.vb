@@ -14,10 +14,10 @@ Public Class Form1
     Dim ConnectionStatus As Boolean = False
     ReadOnly connection As New MySqlConnection()
 
-    'ReadOnly mysqlserver As String = "Localhost"
-    'ReadOnly mysqlusername As String = "root"
-    ReadOnly mysqlserver As String = "192.168.11.219"
-    ReadOnly mysqlusername As String = "ariff"
+    ReadOnly mysqlserver As String = "Localhost"
+    ReadOnly mysqlusername As String = "root"
+    'ReadOnly mysqlserver As String = "192.168.11.219"
+    'ReadOnly mysqlusername As String = "ariff"
     ReadOnly mysqlpassword As String = "tw_mysql_root"
     ReadOnly mysqldatabase As String = "moe"
 
@@ -600,4 +600,7 @@ UPDATE _mstr_analyzer SET comm_addrs = '', com_port = 'COM1', flag = @aio_stats,
         form2.Show()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Diagnostics.Process.Start("FixDB\CheckDbHide.bat")
+    End Sub
 End Class
