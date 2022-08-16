@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btn_sms = New System.Windows.Forms.Button()
         Me.btn_setstation = New System.Windows.Forms.Button()
@@ -73,7 +74,11 @@ Partial Class Form1
         Me.lbl_noxip = New System.Windows.Forms.Label()
         Me.lbl_so2ip = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_checkDB = New System.Windows.Forms.Button()
+        Me.btn_cctv = New System.Windows.Forms.Button()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -560,21 +565,50 @@ Partial Class Form1
         'BackgroundWorker1
         '
         '
-        'Button1
+        'btn_checkDB
         '
-        Me.Button1.Location = New System.Drawing.Point(6, 290)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(90, 23)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "Check DB"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_checkDB.Location = New System.Drawing.Point(87, 293)
+        Me.btn_checkDB.Name = "btn_checkDB"
+        Me.btn_checkDB.Size = New System.Drawing.Size(90, 23)
+        Me.btn_checkDB.TabIndex = 13
+        Me.btn_checkDB.Text = "Check DB"
+        Me.btn_checkDB.UseVisualStyleBackColor = True
+        '
+        'btn_cctv
+        '
+        Me.btn_cctv.Location = New System.Drawing.Point(6, 293)
+        Me.btn_cctv.Name = "btn_cctv"
+        Me.btn_cctv.Size = New System.Drawing.Size(75, 23)
+        Me.btn_cctv.TabIndex = 16
+        Me.btn_cctv.Text = "CCTV"
+        Me.btn_cctv.UseVisualStyleBackColor = True
+        '
+        'Timer1
+        '
+        '
+        'Label1
+        '
+        Me.Label1.Location = New System.Drawing.Point(0, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(100, 23)
+        Me.Label1.TabIndex = 18
+        '
+        'Label2
+        '
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(100, 23)
+        Me.Label2.TabIndex = 17
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1064, 445)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btn_cctv)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btn_checkDB)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
@@ -641,5 +675,9 @@ Partial Class Form1
     Friend WithEvents lbl_noxip As Label
     Friend WithEvents lbl_so2ip As Label
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_checkDB As Button
+    Friend WithEvents btn_cctv As Button
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class

@@ -31,6 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="CCTV.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="FixDB\CheckDbHide.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -45,6 +48,12 @@
 
   <ItemGroup>
     <Folder Include="FixDB\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="OpenHardwareMonitorLib">
+      <HintPath>bin\Debug\net6.0-windows\OpenHardwareMonitorLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

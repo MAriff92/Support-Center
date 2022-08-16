@@ -5,6 +5,10 @@ Imports System.ServiceProcess
 Imports System.Windows
 Imports Microsoft.VisualBasic.FileIO
 Imports MySql.Data.MySqlClient
+Imports OpenHardwareMonitor
+Imports OpenHardwareMonitor.Hardware
+Imports System
+Imports System.Reflection.Emit
 
 Public Class Form1
 
@@ -14,10 +18,10 @@ Public Class Form1
     Dim ConnectionStatus As Boolean = False
     ReadOnly connection As New MySqlConnection()
 
-    ReadOnly mysqlserver As String = "Localhost"
-    ReadOnly mysqlusername As String = "root"
-    'ReadOnly mysqlserver As String = "192.168.11.219"
-    'ReadOnly mysqlusername As String = "ariff"
+    'ReadOnly mysqlserver As String = "Localhost"
+    'ReadOnly mysqlusername As String = "root"
+    ReadOnly mysqlserver As String = "192.168.11.219"
+    ReadOnly mysqlusername As String = "ariff"
     ReadOnly mysqlpassword As String = "tw_mysql_root"
     ReadOnly mysqldatabase As String = "moe"
 
@@ -32,12 +36,17 @@ Public Class Form1
         getthisstation()
 
         FormActive = True
+
     End Sub
+
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+    End Sub
+
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         If FormActive = False Then
             ipadmin()
-
-            getthisstation()
 
             FormActive = True
         End If
@@ -476,7 +485,11 @@ UPDATE _mstr_analyzer SET comm_addrs = '', com_port = 'COM1', flag = @aio_stats,
                 stationCity = fields(4)
                 stationState = fields(5)
                 stationType = fields(6)
-                stationStatus = "Continuos"
+                If stationNumber = "101" Or stationNumber = "102" Or stationNumber = "103" Then
+                    stationStatus = "Mobile"
+                Else
+                    stationStatus = "Continuos"
+                End If
                 If stationNumber = setstationNumber Then
                     'MessageBox.Show(String.Format("{0} - {1} - {2} - {3} - {4} - {5} - {6}", stationNumber, stationID, stationName, stationLoc, stationCity, stationState, stationType))
                     stationinfo = {stationNumber, stationID, stationName, stationLoc, stationCity, stationState, stationType, stationStatus}
@@ -599,8 +612,13 @@ UPDATE _mstr_analyzer SET comm_addrs = '', com_port = 'COM1', flag = @aio_stats,
         Dim form2 = New Form2()
         form2.Show()
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btn_checkDB_Click(sender As Object, e As EventArgs) Handles btn_checkDB.Click
         Diagnostics.Process.Start("FixDB\CheckDbHide.bat")
     End Sub
+
+    Private Sub btn_cctv_Click(sender As Object, e As EventArgs) Handles btn_cctv.Click
+
+        Process.Start("powershell", "-File CCTV.ps1")
+    End Sub
+
 End Class
