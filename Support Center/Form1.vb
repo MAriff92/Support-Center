@@ -48,8 +48,6 @@ Public Class Form1
         If FormActive = False Then
             ipadmin()
 
-            getthisstation()
-
             FormActive = True
         End If
     End Sub
