@@ -48,6 +48,8 @@ Public Class Form1
         If FormActive = False Then
             ipadmin()
 
+            getthisstation()
+
             FormActive = True
         End If
     End Sub
@@ -251,7 +253,6 @@ Public Class Form1
 
     Private Sub connectmysql()
         connection.ConnectionString = "server=" + mysqlserver + ";database=" + mysqldatabase + ";user id=" + mysqlusername + ";password=" + mysqlpassword + ";"
-        'MessageBox.Show(connection.ConnectionString)
 
         Try
             connection.Open()
