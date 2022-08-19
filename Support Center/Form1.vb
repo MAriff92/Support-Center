@@ -20,7 +20,7 @@ Public Class Form1
 
     'ReadOnly mysqlserver As String = "Localhost"
     'ReadOnly mysqlusername As String = "root"
-    ReadOnly mysqlserver As String = "192.168.1 1.219"
+    ReadOnly mysqlserver As String = "192.168.11.219"
     ReadOnly mysqlusername As String = "ariff"
     ReadOnly mysqlpassword As String = "tw_mysql_root"
     ReadOnly mysqldatabase As String = "moe"
@@ -625,8 +625,10 @@ UPDATE _mstr_analyzer SET comm_addrs = '', com_port = 'COM1', flag = @aio_stats,
     End Sub
 
     Private Sub btn_cctv_Click(sender As Object, e As EventArgs) Handles btn_cctv.Click
-
         Process.Start("powershell", "-File CCTV.ps1")
     End Sub
 
+    Private Sub btn_modem_Click(sender As Object, e As EventArgs) Handles btn_modem.Click
+        Process.Start("powershell", "-File Modem.ps1")
+    End Sub
 End Class

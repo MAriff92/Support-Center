@@ -79,6 +79,7 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btn_modem = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -567,7 +568,7 @@ Partial Class Form1
         '
         'btn_checkDB
         '
-        Me.btn_checkDB.Location = New System.Drawing.Point(87, 293)
+        Me.btn_checkDB.Location = New System.Drawing.Point(183, 293)
         Me.btn_checkDB.Name = "btn_checkDB"
         Me.btn_checkDB.Size = New System.Drawing.Size(90, 23)
         Me.btn_checkDB.TabIndex = 13
@@ -600,11 +601,21 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(100, 23)
         Me.Label2.TabIndex = 17
         '
+        'btn_modem
+        '
+        Me.btn_modem.Location = New System.Drawing.Point(87, 293)
+        Me.btn_modem.Name = "btn_modem"
+        Me.btn_modem.Size = New System.Drawing.Size(90, 23)
+        Me.btn_modem.TabIndex = 19
+        Me.btn_modem.Text = "Modem"
+        Me.btn_modem.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1064, 445)
+        Me.Controls.Add(Me.btn_modem)
         Me.Controls.Add(Me.btn_cctv)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -680,4 +691,5 @@ Partial Class Form1
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents btn_modem As Button
 End Class
