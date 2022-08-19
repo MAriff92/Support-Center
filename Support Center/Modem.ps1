@@ -4,7 +4,7 @@ $os = (Get-WmiObject -class Win32_OperatingSystem).Caption
 $ipv4
 
 if ($os -match "Windows 10"){
-[system.Diagnostics.Process]::Start("msedge",("https://"&$ipv4))
+[system.Diagnostics.Process]::Start("msedge",('https://'+$ipv4))
 "Win10"}
 if ($os -match "Windows 7"){
 Start-Process -FilePath 'iexplore.exe' -ArgumentList ('http://'+$ipv4)
