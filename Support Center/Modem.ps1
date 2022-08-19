@@ -7,6 +7,6 @@ if ($os -match "Windows 10"){
 [system.Diagnostics.Process]::Start("msedge",('https://'+$ipv4))
 "Win10"}
 if ($os -match "Windows 7"){
-Start-Process -FilePath 'iexplore.exe' -ArgumentList ('http://'+$ipv4)
+Start-Process -FilePath 'iexplore.exe' -ArgumentList ('https://'+$ipv4)
 "Win7"}
 
