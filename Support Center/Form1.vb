@@ -165,17 +165,26 @@ Public Class Form1
             newGateway = "172.16." + IPset + ".1"
         End If
 
+        Dim netshargument
         Dim psi As New ProcessStartInfo("Netsh")
+        Dim psi2 As New ProcessStartInfo("Netsh")
         psi.Verb = "runas" ' aka run as administrator
         psi.FileName = "Netsh"
         psi.Arguments = "interface ip set address name=""Ethernet"" static " + newIP + " 255.255.255.0 " + newGateway ' <- pass arguments for the command you want to run
         psi.UseShellExecute = False
         psi.RedirectStandardInput = True
         psi.RedirectStandardOutput = True
-        MessageBox.Show(psi.Arguments)
+        netshargument = psi.Arguments
+        psi2.Arguments = "interface ip set dns name=""Ethernet"" static 8.8.8.8"  ' <- pass arguments for the command you want to run
+        psi2.UseShellExecute = False
+        psi2.RedirectStandardInput = True
+        psi2.RedirectStandardOutput = True
+        netshargument += " " & psi2.Arguments
+        MessageBox.Show(netshargument)
 
         Try
             Process.Start(psi) ' <- run the process (user will be prompted to run with administrator access)
+            Process.Start(psi2) ' <- run the process (user will be prompted to run with administrator access)
         Catch
             ' exception raised if user declines the admin prompt\
             MessageBox.Show("Set Local IP Failed")
