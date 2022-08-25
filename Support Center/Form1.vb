@@ -152,9 +152,18 @@ Public Class Form1
     End Sub
 
     Private Sub ChangeIP(IPset)
-        Dim newIP = "172.16." + IPset + ".5"
-        Dim newSubNet = "255.255.255.0"
-        Dim newGateway = "172.16." + IPset + ".1"
+        Dim newIP = ""
+        Dim newSubNet = ""
+        Dim newGateway = ""
+        If IPset = "81" Then
+            newIP = "192.168.11.219"
+            newSubNet = "255.255.255.0"
+            newGateway = "192.168.11.1"
+        Else
+            newIP = "172.16." + IPset + ".5"
+            newSubNet = "255.255.255.0"
+            newGateway = "172.16." + IPset + ".1"
+        End If
 
         Dim psi As New ProcessStartInfo("Netsh")
         psi.Verb = "runas" ' aka run as administrator
@@ -630,5 +639,9 @@ UPDATE _mstr_analyzer SET comm_addrs = '', com_port = 'COM1', flag = @aio_stats,
 
     Private Sub btn_modem_Click(sender As Object, e As EventArgs) Handles btn_modem.Click
         Process.Start("powershell", "-File Modem.ps1")
+    End Sub
+
+    Private Sub btn_dvcmgr_Click(sender As Object, e As EventArgs) Handles btn_dvcmgr.Click
+        Shell("mmc devmgmt.msc")
     End Sub
 End Class

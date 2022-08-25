@@ -80,6 +80,7 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btn_modem = New System.Windows.Forms.Button()
+        Me.btn_dvcmgr = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -568,9 +569,9 @@ Partial Class Form1
         '
         'btn_checkDB
         '
-        Me.btn_checkDB.Location = New System.Drawing.Point(183, 293)
+        Me.btn_checkDB.Location = New System.Drawing.Point(207, 293)
         Me.btn_checkDB.Name = "btn_checkDB"
-        Me.btn_checkDB.Size = New System.Drawing.Size(90, 23)
+        Me.btn_checkDB.Size = New System.Drawing.Size(102, 23)
         Me.btn_checkDB.TabIndex = 13
         Me.btn_checkDB.Text = "Check DB"
         Me.btn_checkDB.UseVisualStyleBackColor = True
@@ -579,7 +580,7 @@ Partial Class Form1
         '
         Me.btn_cctv.Location = New System.Drawing.Point(6, 293)
         Me.btn_cctv.Name = "btn_cctv"
-        Me.btn_cctv.Size = New System.Drawing.Size(75, 23)
+        Me.btn_cctv.Size = New System.Drawing.Size(87, 23)
         Me.btn_cctv.TabIndex = 16
         Me.btn_cctv.Text = "CCTV"
         Me.btn_cctv.UseVisualStyleBackColor = True
@@ -603,18 +604,28 @@ Partial Class Form1
         '
         'btn_modem
         '
-        Me.btn_modem.Location = New System.Drawing.Point(87, 293)
+        Me.btn_modem.Location = New System.Drawing.Point(99, 293)
         Me.btn_modem.Name = "btn_modem"
-        Me.btn_modem.Size = New System.Drawing.Size(90, 23)
+        Me.btn_modem.Size = New System.Drawing.Size(102, 23)
         Me.btn_modem.TabIndex = 19
         Me.btn_modem.Text = "Modem"
         Me.btn_modem.UseVisualStyleBackColor = True
+        '
+        'btn_dvcmgr
+        '
+        Me.btn_dvcmgr.Location = New System.Drawing.Point(315, 293)
+        Me.btn_dvcmgr.Name = "btn_dvcmgr"
+        Me.btn_dvcmgr.Size = New System.Drawing.Size(102, 23)
+        Me.btn_dvcmgr.TabIndex = 20
+        Me.btn_dvcmgr.Text = "Device Manager"
+        Me.btn_dvcmgr.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1064, 445)
+        Me.Controls.Add(Me.btn_dvcmgr)
         Me.Controls.Add(Me.btn_modem)
         Me.Controls.Add(Me.btn_cctv)
         Me.Controls.Add(Me.Label2)
@@ -692,4 +703,5 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents btn_modem As Button
+    Friend WithEvents btn_dvcmgr As Button
 End Class
