@@ -331,9 +331,9 @@ Public Class Form1
 
         If ConnectionStatus = True Then
             Dim mysqlcommand As New MySqlCommand("UPDATE _mstr_station Set _stationID = @stationID, _stationName = @stationName, _stationIP = '172.16.81.5', _stationAddress = @stationAddress, _stationCity = @stationCity, _stationState = @stationState, _stationCode = @stationID, _station_modified_date = '2022-01-01 00:00:00', _stationStatus = @stationStatus, _stationCategories = @stationType, _station_lat = '', _station_long = '', _stationActive = '1' WHERE _autoid = 1;
-INSERT INTO _dr_ftp (_hostname, _port, _uname, _pword, flag, _cert, _modified_date, _encryption) VALUES ('175.136.253.77', '9951', 'CAQMv2', 'pstw2020_caqm', 1,'','2022-01-01 00:00:00','');
-INSERT INTO _edc_ftp (_hostname, _port, _uname, _pword, flag, _cert, _modified_date, _encryption) VALUES ('eqmpdata1.doe.gov.my', '9951', 'CAQMv2', 'pstw2020_caqm', 1,'','2022-01-01 00:00:00','');
-INSERT INTO _hq_ftp (_hostname, _port, _uname, _pword, flag, _cert, _modified_date, _encryption) VALUES ('60.51.18.26', '21', @HQFTP_username, @HQFTP_password, 1,'','2022-01-01 00:00:00','');
+INSERT INTO _dr_ftp (_hostname, _port, _uname, _pword, flag, _cert, _modified_date, _encryption) VALUES ('175.136.253.77', '9951', 'CAQMv2', 'pstw2020_caqm', 1,'','2022-01-01 00:00:00','none');
+INSERT INTO _edc_ftp (_hostname, _port, _uname, _pword, flag, _cert, _modified_date, _encryption) VALUES ('eqmpdata1.doe.gov.my', '9951', 'CAQMv2', 'pstw2020_caqm', 1,'','2022-01-01 00:00:00','none');
+INSERT INTO _hq_ftp (_hostname, _port, _uname, _pword, flag, _cert, _modified_date, _encryption) VALUES ('60.51.18.26', '21', @HQFTP_username, @HQFTP_password, 1,'','2022-01-01 00:00:00','none');
 INSERT INTO _sms_receiver (_num, flag, _desc, modified_date) VALUES ('0126036035', 1,'EDC','2022-01-01 00:00:00');
 INSERT INTO _mstr_analyzer (name, _model_name, comm_addrs, com_port, flag, _stationId, analyzer_port, period, time_out, poll_control, unit_id, database_name, modified_date) VALUES ('Teom', '1405 TEOM', '172.16.81.14', 'COM3', @teom_stats, @stationID, '',  12,  '3000',  '1',  '',  '', '2022-01-01 00:00:00') ;
 INSERT INTO _mstr_analyzer (name, _model_name, comm_addrs, com_port, flag, _stationId, analyzer_port, period, time_out, poll_control, unit_id, database_name, modified_date) VALUES ('NOx', '42i  (NO-NO 2 -NO x )', '172.16.81.42', '', @nox_stats, @stationID, '502', 12, '', '1', '42', '', '2022-01-01 00:00:00');
@@ -484,9 +484,9 @@ INSERT INTO _mstr_analyzer (name, _model_name, comm_addrs, com_port, flag, _stat
         }
 
             Dim mysqlcommand As New MySqlCommand("UPDATE _mstr_station Set _stationID = @stationID, _stationName = @stationName, _stationIP = '172.16." + setstationNumber + ".5', _stationAddress = @stationAddress, _stationCity = @stationCity, _stationState = @stationState, _stationCode = @stationID, _station_modified_date = @currDate, _stationStatus = @stationStatus, _stationCategories = @stationType, _station_lat = '', _station_long = '', _stationActive = '1' WHERE _autoid = 1;
-UPDATE _dr_ftp SET _hostname = '175.136.253.77', _port = '9951', _uname = 'CAQMv2', _pword = 'pstw2020_caqm', flag = 1, _cert = '', _modified_date = '2022-01-01 00:00:00', _encryption = '' WHERE autoid = 1;
-UPDATE _edc_ftp SET _hostname = 'eqmpdata1.doe.gov.my', _port = '9951', _uname = 'CAQMv2', _pword = 'pstw2020_caqm', flag = 1, _cert = '', _modified_date = '2022-01-01 00:00:00', _encryption = '' WHERE autoid = 1;
-UPDATE _hq_ftp SET _hostname = '60.51.18.26', _port = '21', _uname = @HQFTP_username, _pword = @HQFTP_password, flag = 1, _cert = '', _modified_date = '2022-01-01 00:00:00', _encryption = '' WHERE autoid = 1;
+UPDATE _dr_ftp SET _hostname = '175.136.253.77', _port = '9951', _uname = 'CAQMv2', _pword = 'pstw2020_caqm', flag = 1, _cert = '', _modified_date = '2022-01-01 00:00:00', _encryption = 'none' WHERE autoid = 1;
+UPDATE _edc_ftp SET _hostname = 'eqmpdata1.doe.gov.my', _port = '9951', _uname = 'CAQMv2', _pword = 'pstw2020_caqm', flag = 1, _cert = '', _modified_date = '2022-01-01 00:00:00', _encryption = 'none' WHERE autoid = 1;
+UPDATE _hq_ftp SET _hostname = '60.51.18.26', _port = '21', _uname = @HQFTP_username, _pword = @HQFTP_password, flag = 1, _cert = '', _modified_date = '2022-01-01 00:00:00', _encryption = 'none' WHERE autoid = 1;
 UPDATE _sms_receiver SET _num = '0126036035', flag = 1, _desc = 'EDC', modified_date = '2022-01-01 00:00:00' WHERE autoid = 1;
 UPDATE _gsm_port SET _port_name = 'COM4', flag = 1, _baud_rate = '115200', modified_date = '2022-01-01 00:00:00' WHERE autoid = 1;
 UPDATE _mstr_analyzer SET comm_addrs = '172.16." + setstationNumber + ".14', com_port = 'COM3', flag = @teom_stats, _stationId = @stationID, analyzer_port = '', period = 12, time_out = '3000', poll_control = '1', unit_id = '', database_name = '', modified_date = '2022-01-01 00:00:00' WHERE autoid = 1;
