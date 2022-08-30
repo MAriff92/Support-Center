@@ -359,9 +359,8 @@ INSERT INTO _mstr_analyzer (name, _model_name, comm_addrs, com_port, flag, _stat
             Dim cal_stats As String = ""
             Dim op_stats As String = ""
             Dim aio_stats As String = ""
-            Dim HQFTP_username = "caqm" & txtbx_setstation.Text.ToString
-            Dim HQFTP_password = "caqm" & txtbx_setstation.Text.ToString
-            Dim setstationNumber As String = txtbx_setstation.Text.ToString
+            Dim HQFTP_username = "caqm81"
+            Dim HQFTP_password = "caqm81"
             Dim stationinfo() = Array.Empty(Of Object)()
             Dim csvfilename = IO.File.OpenText("Station Info.csv")
             Dim tfp As New TextFieldParser(csvfilename) With {
